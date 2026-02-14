@@ -2,27 +2,41 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# SplitSmart 🎯
 
 ## Basic Details
 
 ### Team Name: [Name]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Anamika H - LBS Institute Of Technology For Women 
+- Member 2: Anaswara Shajee - LBS Institute Of Technology For Women
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://snap-test-q68s.onrender.com/
 
 ### Project Description
-[2-3 lines about what your project does]
+SplitSmart is an AI-powered expense manager designed to eliminate the awkwardness of sharing finances. It uses Optical Character Recognition (OCR) to automatically digitize paper receipts, applies a Greedy Graph Algorithm to minimize the total number of transactions required to settle up, and integrates Dynamic UPI QR Codes for instant payments.
 
 ### The Problem statement
-[What problem are you solving?]
+Sharing expenses in groups (trips, flatmates, dinners) is broken.
+
+Manual Entry is Tedious: Typing out every item from a long receipt is boring and prone to errors.
+
+Complex Settlements: In a group of 5 people, "who owes whom" becomes a tangled web of debts.
+
+Social Friction: Asking friends for money is awkward. People forget to pay, leading to strained relationships.
 
 ### The Solution
-[How are you solving it?]
+SplitSmart automates the entire lifecycle of a shared expense:
+
+Scan: Users simply take a photo of the bill. Our Tesseract-based OCR engine extracts the total amount automatically.
+
+Optimize: We use a "Minimize Cash Flow" algorithm to simplify debts. Instead of Alice paying Bob, and Bob paying Charlie, the system calculates that Alice should just pay Charlie directly.
+
+Settle: The app generates a real, scan-to-pay UPI QR code for the exact amount owed.
+
+Gamify: To reduce social friction, we added an "AI Roast" mode that mocks the group's spending habits.
 
 ---
 
@@ -31,10 +45,13 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: Python, JavaScript , HTML, CSS
+- Frameworks used: Flask
+- Libraries used:
+  Backend: pytesseract (OCR Wrapper), Pillow (Image Preprocessing/Contrast Enhancement), flask-cors.
+
+Frontend: Chart.js (Visual Analytics), qrcode.js (UPI Generation), canvas-confetti (UI Interactions).
+- Tools used: VS Code, Git, Tesseract-OCR Engine
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +63,16 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: AI-Powered OCR Scanning
+Advanced image preprocessing (grayscale conversion, contrast enhancement, and sharpening) allows the app to read crumpled or low-light receipts and extract the total amount automatically using Regex pattern matching.
+- Feature 2: Debt Simplification (Greedy Algorithm)
+Implements a Minimum Cash Flow algorithm that calculates net balances for every member and greedily settles the largest creditor with the largest debtor. This reduces transaction volume by up to 60%.
+- Feature 3: Instant UPI Integration
+Generates dynamic, valid UPI strings (upi://pay?...) rendered as QR codes. Users can scan these codes with any app (GPay, Paytm, PhonePe) to pay the exact calculated debt instantly.
+- Feature 4: Social Gamification & "Roast Mode"
+Includes a "Roast" button that analyzes spending categories to generate funny, passive-aggressive insults about the group's financial habits.
+- Feature 5: Feature 5: One-Click WhatsApp "Nagging"
+A "Nag" button next to every debt allows users to send a pre-filled, humorous WhatsApp message to the debtor reminding them to pay up.
 
 ---
 
@@ -59,12 +82,12 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+pip install flask flask-cors pytesseract Pillow
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+python app.py
 ```
 
 ### For Hardware:
@@ -83,14 +106,18 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+https://drive.google.com/file/d/1FHa62exPmkdmwzovmNV_rR4gJtqLtRYs/view?usp=drive_link
+The Landing Page features a modern, dark-themed UI designed for quick onboarding. Users can initialize a new session by entering a Group Name (e.g., 'Goa Trip') and listing the Members. The interface highlights key features like OCR Scanning and AI Roasts, serving as the entry point to the application.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+https://drive.google.com/file/d/19mK-NcU2r578xx1oRxpL5xVV1wfcPS3N/view?usp=drive_link
+The Main Dashboard is the command center of SplitSmart.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Left Panel: Contains the Add Expense form with the 'Scan Receipt (AI-OCR)' upload area and split logic options (Equal, Percentage, etc.).
+
+Right Panel: Displays Spending DNA (a visual breakdown of expenses by category), Smart Settlements (the output of the Greedy Algorithm showing minimized transactions), and Net Balances (real-time financial standing of each member).
+
+https://drive.google.com/file/d/1InVT5bM0p1K9brFHpTOYYvknN3M8qsmW/view?usp=drive_link
+The Exported CSV Report demonstrates the data persistence and portability feature. Users can download a detailed log of all transactions, including the Payer, Title, Category, Amount, and Split Type. This file allows users to maintain offline records or perform further analysis in Excel
 
 #### Diagrams
 
@@ -137,7 +164,7 @@ List the key features of your project:
 
 #### API Documentation
 
-**Base URL:** `https://api.yourproject.com`
+**Base URL:** `https://snap-test-q68s.onrender.com`
 
 ##### Endpoints
 
